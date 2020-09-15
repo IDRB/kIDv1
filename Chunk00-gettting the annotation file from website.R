@@ -1,13 +1,20 @@
 
 
+download.file("http://rest.kegg.jp/list/ko", "ko.txt")
 
-library(rvest)
+anno <- readLines("ko.txt")
 
-web <- read_html("https://cosylab.iiitd.edu.in/flavordb/molecules?common_name=&functional_group=&flavor_profile=&fema_flavor=&molecular_weight_from=&h_bond_donors=&h_bond_acceptors=&type=natural&smile=&page=1")
+strsplit(anno[1], "\t")[[1]][1]
+strsplit(anno[1], "\t")[[1]][2]
 
-a <- web %>% html_nodes("div.col-sm-12 td")
+strsplit(strsplit(anno[1], "\t")[[1]][2], "; ")[[1]]
 
-html_node(cont, )
+strsplit(strsplit(strsplit(anno[1], "\t")[[1]][2], "; ")[[1]][2], " \\[")[[1]][1]
+
+strsplit(strsplit(strsplit(anno[1], "\t")[[1]][2], "; ")[[1]][2], " \\[")[[1]][2]
+
+
+
 
 
 # ============================
